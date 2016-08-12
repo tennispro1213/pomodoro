@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pomodoro Timer</title>
+
+    <style type="text/css">
+        input {
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0);
+            color: #1986d6;
+
+            margin: 0;
+            border-color: #1986d6;
+        }
+
+        input[type="number"] {
+            font-size: 2rem;
+            text-align: center;
+            border-radius: 10px;
+
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0 auto;
+        }
+
+        button {
+            background-color: black;
+            border-color:#1986d6;
+            border-radius: 10px;
+            color: #1986d6;
+            font-size: 1.5rem;
+            font-family: monospace;
+            margin: 0 10px;
+        }
+        button:hover {
+            background-color: #1986d6;
+            color: black;
+        }
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body style="text-align:center; background-color: #000; color: #1986d6;">
+
+<!-- <h1>Game of Time</h1> -->
+<img src="images/logoOrb.png" width="50%">
+<!-- <div>
+<canvas id="canvas" hidden="true"></canvas>
+</div> -->
+<!-- <h1 style="font-size:2.5rem; font-family:monospace;">Remaining Time:</h1>
+ -->
+<div style="margin: 0 auto; display: flex;justify-content:space-between; width:50%; font-size:2rem;">
+    <pre><input type="number" name="hours" value="0" min="0" max="99">
+Hours</pre>
+
+    <pre><input type="number" name="minutes" value="0" min="0" max="99">
+Minutes</pre>
+
+
+    <pre><input type="number" name="seconds" value="1" min="0" max="99">
+Seconds</pre>
+</div>
+
+<div>
+    <button onclick="pomodoro.setTime()">Start</button>
+<!--     <button onclick="pomodoro.countingDown()">Resume</button>     -->
+    <button onclick="pomodoro.stopTime()" disabled="true">Pause</button>
+</div>
+
+<div id="reward"></div>
+<div id="cards"></div>
+</body>
+<script src="js/pomodoro.js"></script>
+</html>
