@@ -67,7 +67,7 @@ pomodoro = {
 
         //drawCircle(time);
 
-        if (gtime == 0) {
+        if (gtime < 0) {
             //clearInterval(countDown);
             pomodoro.stopTime();
             //alert("Time's Up!");
@@ -100,6 +100,8 @@ pomodoro = {
     stopTime : function() {
         clearInterval(countDown);
 
+        var alarm = new Audio("audio/gotAlarm.mp3");
+        alarm.play();
         //enable start & resume buttons
         buttons[0].disabled = false;
         //buttons[1].disabled = false;
